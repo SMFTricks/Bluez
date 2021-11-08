@@ -415,7 +415,7 @@ function template_menu()
 					</ul>
 				</div>
 	        </div>
-			<ul>';
+			<ul class="menu">';
 
 	foreach ($context['menu_buttons'] as $act => $button)
 	{
@@ -427,7 +427,7 @@ function template_menu()
 		if (!empty($button['sub_buttons']))
 		{
 			echo '
-					<ul>';
+					<ul class="submenu">';
 
 			foreach ($button['sub_buttons'] as $childbutton)
 			{
