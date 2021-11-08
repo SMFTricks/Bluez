@@ -1,0 +1,59 @@
+#header, div.cat_bar, h4.catbg, h4.catbg2 , h3.catbg , h3.catbg2 , .table_list tbody.header td.catbg, #footer,tr.catbg th.first_th, tr.catbg th.last_th, 
+tr.titlebg th.first_th,tr.titlebg th.last_th, .titlebg, .titlebg2, tr.titlebg th, tr.titlebg td, tr.titlebg2 td, .catbg, .catbg2, tr.catbg td, tr.catbg2 td, tr.catbg th, tr.catbg2 th
+{
+	background: #e50505;
+	background: -moz-linear-gradient(top,  #e50505 0%, #cf0404 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e50505), color-stop(100%,#cf0404));
+	background: -webkit-linear-gradient(top,  #e50505 0%,#cf0404 100%);
+	background: -o-linear-gradient(top,  #e50505 0%,#cf0404 100%);
+	background: -ms-linear-gradient(top,  #e50505 0%,#cf0404 100%);
+	background: linear-gradient(to bottom,  #e50505 0%,#cf0404 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e50505', endColorstr='#cf0404',GradientType=0 );
+}
+#userinf img.avatar {
+	border: 1px solid #185d1b;
+}
+ul.tabs a:hover {
+    background: #980909 ;
+}
+ul.tabs a.current, ul.tabs a.current:hover, ul.tabs li.current a {
+    background: #980909 ;
+}
+.panes div {
+    background: #980909 ;
+}
+.tb-boards
+{
+	border: 3px solid #CF0404 ;
+	border-top: none ;
+}
+.table_grid tr.catbg, .table_grid tr.titlebg
+{
+	border-left: 3px solid #CF0404 ;
+    border-right: 3px solid #CF0404 ;
+}
+.lt_first
+{
+    background: url(../images/theme/linktree_red.png) no-repeat scroll right -66px transparent;
+}
+.lt_midle
+{
+    background: url(../images/theme/linktree_red.png) repeat-x scroll 0 -4px transparent;
+}
+.lt_last
+{
+    background: url(../images/theme/linktree_red.png) no-repeat scroll left -66px transparent;
+}
+.navigate_section li.last .lt_first
+{
+    background: url(../images/theme/linktree_red.png) no-repeat scroll right -98px transparent;
+}
+.navigate_section li.last .lt_midle
+{
+    background: url(../images/theme/linktree_red.png) repeat-x scroll 0 -35px transparent;
+    color: #919191;
+}
+.navigate_section li.last .lt_last
+{
+    background: url(../images/theme/linktree_red.png) no-repeat scroll left -98px transparent;   
+}

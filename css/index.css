@@ -1817,6 +1817,8 @@ select.qaction, input.qaction
 	width: 32px;
 	height: 32px;
 	display: block;
+	position: absolute;
+	left:49%;
 }
 #footer ul.social_icons li
 {
@@ -3920,30 +3922,30 @@ span.hidelink
 	-moz-box-shadow:rgba(255,255,255,0.25) 0px 0px 1px, rgba(255,255,255,0.1) 0px 1px 0px, inset rgba(0,0,0,1) 0px 1px 4px;
 	box-shadow:rgba(255,255,255,0.25) 0px 0px 1px, rgba(255,255,255,0.1) 0px 1px 0px, inset rgba(0,0,0,1) 0px 1px 4px;
 }
-#menu ul {
+#menu ul.menu {
     margin:0;
     padding: 0;
     list-style:none;
 }
 
-#menu ul li {
+#menu ul.menu li {
     float:left;
 	line-height: 35px;
 }
-#menu ul li a {
+#menu ul.menu li a {
     float: left;
     color: #FFF;
     padding: 0 10px;
 }
-#menu ul li a:hover, #menu ul li:hover > a
+#menu ul.menu li a:hover, #menu ul.menu li:hover > a
 {
     text-decoration: none;
 }
-#menu ul li a.active {
+#menu ul.menu li a.active {
     font-weight: bold;
     text-decoration:none;
 }
-#menu li ul {
+#menu li ul.submenu {
     background:#FFF;
 	border: 1px solid #000;
 	border-top: none;
@@ -3954,8 +3956,9 @@ span.hidelink
     width: 202px;
 	padding: 0;
 	z-index: 9999;
+	list-style: none;
 }
-#menu li ul a {
+#menu li ul.submenu a {
     background: none;
     margin-right: 0;
     width: 170px;
@@ -3963,20 +3966,20 @@ span.hidelink
     border-bottom: 1px solid #CCC;
 	color: rgb(51, 51, 51);
 }
-#menu ul  li:first-child a {
+#menu ul.menu  li:first-child a {
     padding-left: 16px;
 }
-#menu ul  li:last-child  a{
+#menu ul.menu  li:last-child  a{
     border: none;
 	border-radius: 0 0 10px 10px;
 }
-#menu li ul a:hover, #menu ul li li:hover > a  {
+#menu li ul.submenu a:hover, #menu ul.menu li li:hover > a  {
     color: #000;
     background: #EEE;
 }
 
-#menu li:hover ul {
-        left: auto;
+#menu li:hover ul.submenu {
+    left: auto;
 }
 #menu li li ul {
     margin: -1px 0 0 160px;
@@ -4067,6 +4070,7 @@ td.icon, td.stats, td.info, td.children, td.lastpost
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08);
 	margin: 0;
 	display: inline-block;
+	float: right;
  }
  .button_submit2:hover
 {
@@ -4187,27 +4191,19 @@ ul.tabs a img {
 	line-height: 35px;
 	padding: 0 10px;
 }
+#search form
+{
+    float: right;
+}
 #search input
 {
     background: #FFF;
 	color: #CCC;
 	border: none;
 	margin:0;
-	border-radius: 5px 0 0 5px;
+	border-radius: 5px;
 	padding: 5px;
 	width: 180px;
-}
-#search .submit
-{
-    background: #FFF url(../images/search.png) no-repeat center;
-    width: 20px;
-	float: right;
-	z-index: 1;
-	position: relative;
-	margin: 7px 0 0 -3px;
-	padding: 4px;
-	border-radius: 0 5px 5px 0;
-	cursor: pointer;
 }
 .infodis
 {
@@ -4221,4 +4217,81 @@ ul.tabs a img {
 	padding: 0 5px;
     margin-top: 2px;
 	border-radius: 5px 5px 0 0;
+}
+#colorpicker 
+{
+    display: block;
+    font: 11px Tahoma, Arial, Verdana, sans-serif;
+	float: lefT;
+    overflow: hidden;
+	width: auto;
+	height: 35px;
+}
+#colorpicker ul.colorpicker {
+    margin:0;
+    padding: 0;
+    list-style:none;
+}
+
+#colorpicker ul.colorpicker li {
+    float:left;
+	line-height: 35px;
+}
+#colorpicker ul.colorpicker li a {
+    float: left;
+    color: #FFF;
+    padding: 0 10px;
+}
+#colorpicker ul.colorpicker li a img {
+    margin-bottom: -4px;
+}
+#colorpicker ul.colorpicker li a:hover, #colorpicker ul.colorpicker li:hover > a
+{
+    text-decoration: none;
+}
+#colorpicker ul.colorpicker li a.active {
+    font-weight: bold;
+    text-decoration:none;
+}
+#colorpicker li ul.subcolor {
+    background: url(../images/theme/subcolor.png) no-repeat top left;
+	border-top: none;
+    border-radius: 10px;
+    left: -999em;
+    margin: 25px 0 0;
+    position: absolute;
+    width: 202px;
+	padding: 10px 0 0;
+	z-index: 9999;
+	list-style: none;
+}
+#colorpicker li ul.subcolor a {
+    background: none;
+    margin-right: 0;
+    width: 170px;
+	padding: 0 16px;
+    border-bottom: 1px solid #CCC;
+	color: rgb(51, 51, 51);
+    border-left: 1px solid #CCC;
+    border-right: 1px solid #CCC;
+}
+#colorpicker ul.subcolor li:last-child  a{
+	border-radius: 0 0 10px 10px;
+    border-bottom: 1px solid #CCC;
+}
+#colorpicker li ul.subcolor a:hover, #colorpicker ul.colorpicker li li:hover > a  {
+    color: #000;
+    background: #EEE;
+}
+
+#colorpicker li:hover ul.subcolor {
+    left: auto;
+}
+#colorpicker li li ul {
+    margin: -1px 0 0 160px;
+    border-radius: 0 10px 10px 10px;
+    visibility:hidden;
+}
+#colorpicker li li:hover ul {
+    visibility:visible;
 }

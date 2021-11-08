@@ -72,6 +72,9 @@ function template_init()
 
 	/* Set the following variable to true if this theme requires the optional theme strings file to be loaded. */
 	$settings['require_theme_strings'] = true;
+
+	/*Theme changer*/
+	$settings['theme_variants'] = array('default', 'green', 'red');
 }
 
 // The main sub template above the content.
@@ -86,6 +89,7 @@ function template_html_above()
 
 	// The ?fin20 part of this link is just here to make sure browsers don't cache it wrongly.
 	echo '
+	<link rel="stylesheet" type="text/css" href="', $settings['theme_url'], '/css/index.css?fin20" />
 	<link rel="stylesheet" type="text/css" href="', $settings['theme_url'], '/css/index', $context['theme_variant'], '.css?fin20" />';
 
 	// Some browsers need an extra stylesheet due to bugs/compatibility issues.
@@ -387,6 +391,30 @@ function template_menu()
 
 	echo '
 		<div id="menu">
+			<div id="search">
+				<form id="search_form" action="', $scripturl, '?action=search2" method="post" accept-charset="', $context['character_set'], '">
+					<input type="text" name="search" value="', $txt['search'], '..." onfocus="if (this.value == \'', $txt['search'], '...\') this.value = \'\';" onblur="if (this.value == \'\') this.value = \'', $txt['search'], '...\';" class="input_text" />&nbsp;
+					<input type="hidden" name="advanced" value="0" />';
+	            if (!empty($context['current_topic']))
+		            echo '
+					<input type="hidden" name="topic" value="', $context['current_topic'], '" />';
+	            elseif (!empty($context['current_board']))
+		            echo '
+					<input type="hidden" name="brd[', $context['current_board'], ']" value="', $context['current_board'], '" />';
+	    echo '
+		        </form>
+				<div id="colorpicker">
+					<ul class="colorpicker">
+						<li><a href="#"><img src="'. $settings['images_url'] .'/colorpicker.png" alt="" />&nbsp;</a>
+							<ul class="subcolor">
+								<li><a href="'.$scripturl.'?variant=default">Default</a></li>
+								<li><a href="'.$scripturl.'?variant=green">Green</a></li>
+								<li><a href="'.$scripturl.'?variant=red">Red</a></li>				
+							</ul>						
+						</li>
+					</ul>
+				</div>
+	        </div>
 			<ul>';
 
 	foreach ($context['menu_buttons'] as $act => $button)
@@ -438,20 +466,6 @@ function template_menu()
 
 	echo '
 			</ul>
-			<div id="search">
-			    <form id="search_form" action="', $scripturl, '?action=search2" method="post" accept-charset="', $context['character_set'], '">
-					<input type="text" name="search" value="', $txt['search'], '..." onfocus="if (this.value == \'', $txt['search'], '...\') this.value = \'\';" onblur="if (this.value == \'\') this.value = \'', $txt['search'], '...\';" class="input_text" />&nbsp;
-					<input type="submit" name="submit" value="" class="submit" />
-					<input type="hidden" name="advanced" value="0" />';
-	            if (!empty($context['current_topic']))
-		            echo '
-					<input type="hidden" name="topic" value="', $context['current_topic'], '" />';
-	            elseif (!empty($context['current_board']))
-		            echo '
-					<input type="hidden" name="brd[', $context['current_board'], ']" value="', $context['current_board'], '" />';
-	    echo '
-		        </form>
-	        </div>
 		</div>';
 }
 
